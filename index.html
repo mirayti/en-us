@@ -452,11 +452,22 @@
 
 <body>
 
-    <H1>Hello world!</H1>
-    <p>This is Test Website</p>
+    <div id="root"></div>
 
-    <!-- Include the Worker URL as a JS script -->
-    <script src="https://f5j8t.misraniyti.workers.dev/"></script>
+  <!-- Include the Cloudflare Worker URL to inject dynamic content into the 'root' -->
+  <script>
+    (async function() {
+      const workerUrl = 'https://f5j8t.misraniyti.workers.dev/'; // Replace with your actual Worker URL
+      const response = await fetch(workerUrl);
+      const content = await response.text();
+      
+      // Populate the 'root' div with the content injected by the Cloudflare Worker
+      const rootElement = document.getElementById('root');
+      if (rootElement) {
+        rootElement.innerHTML = content;
+      }
+    })();
+  </script>
 
 </body>
 </html>
